@@ -4,7 +4,7 @@ import "./Contact.css";
 import axios from "axios";
 
 const Contact = () => {
-  const url =  process.env.REACT_APP_BACKEND_URL
+  const backendUrl =  process.env.REACT_APP_BACKEND_URL
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
@@ -16,7 +16,7 @@ const Contact = () => {
 
     try {
       // Envoi des données au backend (remplacer cette partie par votre code de gestion des requêtes)
-      await axios.post(url + "/api/contact", {
+      await axios.post(`${backendUrl}/api/contact`, {
         name,
         phone,
         subject,
