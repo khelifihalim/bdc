@@ -9,6 +9,7 @@ import { format } from 'date-fns';
 //import AppointmentCard from '../components/AppointmentCard';
 
 const DashboardPage = () => {
+  const url = process.env.REACT_APP_BACKEND_URL
   const [appointments, setAppointments] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [error, setError] = useState(null);
@@ -20,7 +21,7 @@ const DashboardPage = () => {
     //fetch appointments************************************************
     const fetchAppointments = async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/appointments"
+        url + "/api/appointments"
       );
       setAppointments(data);
     };
@@ -29,7 +30,7 @@ const DashboardPage = () => {
     //fetch contacts messages*******************************************
     const fetchContacts = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/contact");
+        const { data } = await axios.get(url + "/api/contact");
         setContacts(data);
       } catch (err) {
         setError("Error fetching contacts");
@@ -52,7 +53,7 @@ const DashboardPage = () => {
 
   const handleDeleteAppointment = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/appointments/${id}`);
+      await axios.delete(url + `/api/appointments/${id}`);
       setAppointments(appointments.filter((appointment) => appointment._id !== id));
     } catch (err) {
       setError("Error deleting appointment");
@@ -61,7 +62,7 @@ const DashboardPage = () => {
 
   const handleDeleteContact = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/contact/${id}`);
+      await axios.delete(url + `/api/contact/${id}`);
       setContacts(contacts.filter((contact) => contact._id !== id));
     } catch (err) {
       setError("Error deleting contact");
