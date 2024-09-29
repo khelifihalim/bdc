@@ -5,7 +5,7 @@
  import { Container, Form, Button } from 'react-bootstrap';
 
  const LoginPage = () => {
-  const url = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const navigate = useNavigate();
@@ -13,7 +13,7 @@
 
    const handleSubmit = async (e) => {
      e.preventDefault();
-     const { data } = await axios.post(url + '/api/auth/login', { email, password });
+     const { data } = await axios.post(`${backendUrl}/api/auth/login`, { email, password });
      setAuth(data.token);
      navigate('/dashboard');
    };
