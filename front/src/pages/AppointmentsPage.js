@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap';
 
 const AppointmentsPage = () => {
-  const url = process.env.REACT_APP_BACKEND_URL;
+   const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [date, setDate] = useState('');
@@ -14,7 +14,7 @@ const AppointmentsPage = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await axios.post(url + '/api/appointments', { name, phoneNumber, date, time });
+      await axios.post(`${backendUrl}/api/appointments`, { name, phoneNumber, date, time });
       alert('Appointment booked successfully!');
       // Réinitialiser le formulaire après la soumission
       setName('');
