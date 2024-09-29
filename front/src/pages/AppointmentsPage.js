@@ -14,7 +14,7 @@ const AppointmentsPage = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await axios.post('url + /api/appointments', { name, phoneNumber, date, time });
+      await axios.post(url + '/api/appointments', { name, phoneNumber, date, time });
       alert('Appointment booked successfully!');
       // Réinitialiser le formulaire après la soumission
       setName('');
