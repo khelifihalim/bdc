@@ -1,0 +1,9 @@
+.message-cell {
+    max-width: 400px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+    word-wrap: break-word; /* Cette propriété permet de retourner à la ligne automatiquement */
+    white-space: pre-wrap; /* Préserve les retours à la ligne et autres espaces blancs */
+  }
+  .selected-appointment {
+    background-color: rgb(0, 255, 13); /* Exemple de couleur de fond pour le rendez-vous sélectionné */
+  }
+    

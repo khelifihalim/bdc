@@ -1,0 +1,70 @@
+/* Navbar customization */
+.custom-navbar {
+    background-color: #c7c7fa; /* Light blue background for health and calmness */
+    border-bottom: 2px solid #0D6EFD; /* Darker blue border for emphasis */
+    transition: height 0.3s ease-in-out;
+  }
+  
+  .custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-navbar .navbar-brand img {
+    margin-right: 10px;
+  }
+  
+  .custom-navbar .nav-link {
+    color: #0D6EFD; /* Primary blue color for links */
+    font-size: 1.1em; /* Slightly larger font size */
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .custom-navbar .btn-outline-primary {
+    color: #0D6EFD;
+    border-color: #0D6EFD;
+  }
+  
+  .custom-navbar .btn-outline-primary:hover {
+    background-color: #0D6EFD;
+    color: white;
+  }
+  
+  /* Adjust content margin to avoid overlap with fixed navbar */
+  .content {
+    margin-top: 70px; /* Adjust based on navbar height */
+  }
+  
+  /* Footer customization */
+  .footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .footer a {
+    color: #0D6EFD;
+  }
+  
+  .footer a:hover {
+    color: #0056b3;
+  }
+  
+  /* Adjust content margin dynamically based on the navbar state */
+  .custom-navbar.show {
+    height: auto; /* Adjust height when navbar is expanded */
+  }
+  
+  @media (min-width: 992px) {
+    .custom-navbar {
+      height: 70px; /* Fixed height for larger screens */
+    }
+  
+    .content {
+      margin-top: 70px; /* Adjust based on navbar height */
+    }
+  }
+  

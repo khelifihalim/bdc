@@ -1,0 +1,18 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56vh; /* Prend toute la hauteur de la fenêtre */
+    width: 100vw;  /* Prend toute la largeur de la fenêtre */
+    /*background-color: #f8f9fa;  Couleur de fond légère */
+  }
+  
+  .login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Largeur maximale pour le formulaire */
+  }
+  

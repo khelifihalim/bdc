@@ -1,0 +1,25 @@
+.custom-navbar .navbar-brand {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-navbar .navbar-collapse {
+    flex-grow: 2;
+  }
+  
+  .custom-navbar .nav-link {
+    font-weight: bold; /* Rendre le texte plus gras */
+    margin-right: 20px; /* Espacer les liens */
+  }
+  
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem; /* Augmenter la taille de la marque */
+    font-weight: bold; /* Rendre le texte plus gras */
+  }
+  
+  .custom-navbar .btn-outline-primary {
+    font-weight: bold; /* Rendre le texte plus gras */
+  }
+  
+  
