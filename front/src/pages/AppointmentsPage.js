@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap';
 
 const AppointmentsPage = () => {
+  const url = process.env.REACT_APP_BACKEND_URL;
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [date, setDate] = useState('');
@@ -13,7 +14,7 @@ const AppointmentsPage = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/appointments', { name, phoneNumber, date, time });
+      await axios.post('url + /api/appointments', { name, phoneNumber, date, time });
       alert('Appointment booked successfully!');
       // Réinitialiser le formulaire après la soumission
       setName('');
@@ -75,61 +76,3 @@ const AppointmentsPage = () => {
 
 export default AppointmentsPage;
 
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import { Container, Form, Button } from 'react-bootstrap';
-
-// const AppointmentsPage = () => {
-//   const [name, setName] = useState('');
-//   const [phoneNumber, setPhoneNumber] = useState('');
-//   const [date, setDate] = useState('');
-//   const [time, setTime] = useState('');
-//   const [isLoading, setIsLoading] = useState(false);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setIsLoading(true);
-//     try {
-//       await axios.post('http://localhost:5000/api/appointments', { name, phoneNumber, date, time });
-//       alert('Appointment booked successfully!');
-//       // Réinitialiser le formulaire après la soumission
-//       setName('');
-//       setPhoneNumber('');
-//       setDate('');
-//       setTime('');
-//     } catch (error) {
-//       console.error('Error booking appointment:', error);
-//       alert('Failed to book appointment. Please try again.');
-//     }
-//     setIsLoading(false);
-//   };
-
-//   return (
-//     <Container className="mt-5">
-//       <h2>Book an Appointment</h2>
-//       <Form onSubmit={handleSubmit}>
-//         <Form.Group className="mb-3">
-//           <Form.Label>Name</Form.Label>
-//           <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-//         </Form.Group>
-//         <Form.Group className="mb-3">
-//           <Form.Label>phoneNumber</Form.Label>
-//           <Form.Control type="number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
-//         </Form.Group>
-//         <Form.Group className="mb-3">
-//           <Form.Label>Date</Form.Label>
-//           <Form.Control type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-//         </Form.Group>
-//         <Form.Group className="mb-3">
-//           <Form.Label>Time</Form.Label>
-//           <Form.Control type="time" value={time} onChange={(e) => setTime(e.target.value)} required />
-//         </Form.Group>
-//         <Button type="submit" variant="primary" disabled={isLoading}>
-//           {isLoading ? 'Booking...' : 'Book Appointment'}
-//         </Button>
-//       </Form>
-//     </Container>
-//   );
-// };
-
-// export default AppointmentsPage;
